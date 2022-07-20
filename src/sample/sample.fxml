@@ -6,9 +6,11 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="865.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
@@ -23,6 +25,27 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
+                        <TextField fx:id="nameTextField" layoutX="96.0" layoutY="214.0" promptText="Имя">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="ageTextField" layoutX="96.0" layoutY="268.0" prefHeight="38.0" prefWidth="84.0" promptText="Возраст">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="addUserButton" layoutX="96.0" layoutY="319.0" mnemonicParsing="false" onAction="#addUserButtonClick" prefHeight="26.0" prefWidth="154.0" text="Добавить">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="369.0" layoutY="268.0" text="Количество добавленных пользователей">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="usersNumberTextField" layoutX="683.0" layoutY="268.0" prefHeight="26.0" prefWidth="59.0" />
                      </children>
                   </AnchorPane>
               </content>
@@ -36,6 +59,28 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
+                        <TableView fx:id="usersTableView" layoutX="501.0" layoutY="167.0" prefHeight="296.0" prefWidth="251.0">
+                          <columns>
+                            <TableColumn fx:id="nameColumn" prefWidth="141.60000610351562" text="Имя" />
+                            <TableColumn fx:id="ageColumn" prefWidth="107.199951171875" text="Возраст" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="listSizeTextField" layoutX="228.0" layoutY="177.0" prefHeight="26.0" prefWidth="82.0" />
+                        <Label layoutX="98.0" layoutY="177.0" text="Размер списка">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="27.0" layoutY="239.0" prefHeight="62.0" prefWidth="222.0" text="Получить информацию о пользователе с номером" wrapText="true">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="findUserButton" layoutX="126.0" layoutY="302.0" mnemonicParsing="false" onAction="#findUserButtonClick" text="Получить" />
+                        <TextField fx:id="findUserByNumberTextField" layoutX="27.0" layoutY="302.0" prefHeight="26.0" prefWidth="84.0" />
+                        <TextField fx:id="foundNameTextField" layoutX="27.0" layoutY="414.0" />
+                        <TextField fx:id="foundAgeTextField" layoutX="188.0" layoutY="414.0" />
+                        <Button fx:id="deleteUserButton" layoutX="545.0" layoutY="496.0" mnemonicParsing="false" onAction="#deleteUserButtonClick" text="Удалить" />
                      </children>
                   </AnchorPane>
             </content>
